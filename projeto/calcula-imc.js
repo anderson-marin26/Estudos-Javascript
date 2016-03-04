@@ -1,9 +1,8 @@
 //Pegando os valores da tr de classe paciente e jogando em um array de nome trsPacientes
 var trsPacientes = document.getElementsByClassName("paciente"); 
 
-for(var posicaoAtual = 0; posicaoAtual <= trsPacientes.length - 1; posicaoAtual++){
+percorreArray(trsPacientes, function(pacienteTr){
 
-	var pacienteTr = trsPacientes[posicaoAtual];
 	// pegando os valores pela class do tr e salvando nas variaveis usando o pacienteTr pra saber a posicao
 	var tdNome = pacienteTr.getElementsByClassName("info-nome")[0];
 	var tdPeso = pacienteTr.getElementsByClassName("info-peso")[0];
@@ -31,4 +30,4 @@ for(var posicaoAtual = 0; posicaoAtual <= trsPacientes.length - 1; posicaoAtual+
 		tdImc.textContent = imc;
 
 		console.log(imc);
-}
+});
