@@ -1,13 +1,3 @@
-function calculaImc(paciente){
-	if (paciente.altura != 0){
-		var imc = paciente.peso / (paciente.altura * paciente.altura);
-		return imc;
-	} 
-	else{
-		console.log("Nao executei porque a altura eh igual a zero");
-	}
-}
-
 //Pegando os valores da tr de classe paciente e jogando em um array de nome trsPacientes
 var trsPacientes = document.getElementsByClassName("paciente"); 
 
@@ -21,9 +11,20 @@ for(var posicaoAtual = 0; posicaoAtual <= trsPacientes.length - 1; posicaoAtual+
 
 
 	//criando objeto
-	var pacienteAtual = {"nome" : tdNome.textContent , "peso" : tdPeso.textContent , "altura" : tdAltura.textContent};
+	var pacienteAtual = {"nome" : tdNome.textContent ,
+						 "peso" : tdPeso.textContent ,
+						 "altura" : tdAltura.textContent,
+						 "pegaImc" : function(){//criando função anonima
+						 	if (this.altura != 0){
+								var imc = this.peso / (this.altura * this.altura);
+								return imc;
+							} 
+							else{
+								console.log("Nao executei porque a altura eh igual a zero");
+							}
+						 }};
 
-	var imc = calculaImc(pacienteAtual);
+	var imc = pacienteAtual.pegaImc();
 
 	//colocando o valor na variavel pra exibir no campo imc
 	var tdImc = pacienteTr.getElementsByClassName("info-imc")[0];
