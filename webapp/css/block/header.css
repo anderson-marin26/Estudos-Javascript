@@ -1,0 +1,21 @@
+.header{
+	background-color: #51B0DC;
+	height: 40px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.header-title{
+	color: #B3DAEE;
+	display: inline;
+	vertical-align: middle;
+}
+
+.header-button{
+	background-color: #006195;
+	color: #FFF;
+	font-size: 16px;
+	box-sizing: content-box;
+	height: 28px;
+	padding: 8px;
+}
