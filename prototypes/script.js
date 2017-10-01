@@ -19,4 +19,6 @@ var dog = {
 	color: 'black'
 }	
 
+Object.defineProperty(dog, 'name', {writable: false})
+
 display(Object.getOwnPropertyDescriptor(dog, 'name'))
