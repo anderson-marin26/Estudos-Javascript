@@ -14,7 +14,9 @@ class Cat
 	}
 }
 
-var cat = new Cat('Minerva', 'White')
+var dog = {
+	name: 'dogo',
+	color: 'black'
+}	
 
-display(cat)
-cat.speak()
+display(Object.getOwnPropertyDescriptor(dog, 'name'))
