@@ -17,8 +17,17 @@ class Cat
 var dog = {
 	name: 'dogo',
 	color: 'black'
-}	
+}
 
-Object.defineProperty(dog, 'name', {writable: false})
+/*
+** With enumerable false you cannot iterate on a for loop or serialize or see the key
+*/
+Object.defineProperty(dog, 'name', {enumerable: false})
 
-display(Object.getOwnPropertyDescriptor(dog, 'name'))
+display(Object.keys(dog))
+
+// loops
+for (var propertyName in dog)
+{
+	display(propertyName + ': ' + dog[propertyName])
+}
